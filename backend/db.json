@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "nome": "teste",
+      "preco": "1",
+      "estoque": "2",
+      "tipo": "hardware",
+      "id": 1
+    },
+    {
+      "nome": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "preco": "2",
+      "estoque": "2",
+      "tipo": "acessorios",
+      "id": 2
+    }
+  ]
+}

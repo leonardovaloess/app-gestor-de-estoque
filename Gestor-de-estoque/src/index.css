@@ -1,0 +1,167 @@
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0e0e0e;
+  color: #f4f4f4;
+}
+
+.header {
+  width: 100%;
+  padding: 2rem;
+  background-color: #111111;
+  border-bottom: 1px solid #ffffff11;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.links p {
+  flex-direction: none;
+  color: #f4f4f4;
+}
+
+.links p:hover{
+  color: #a8a8a8;
+  transition: 0.4s;
+}
+
+.products-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+}
+
+input {
+  padding: 0.4rem;
+  background-color: #111111;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.103);
+}
+select {
+  width: 200px;
+  padding: 0.65rem;
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.103);
+  color: #fff;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container button {
+  width: 150px;
+  padding: 0.43rem;
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.103);
+  color: #fff;
+  margin-top: 1.3rem;
+}
+.modal-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+table{
+  width: 100%;
+}
+
+tr{
+  border: 1px solid rgba(255, 255, 255, 0.103);
+  padding: 1rem;
+  background-color: #111111;
+  
+}
+
+td{
+  padding: 0.6rem;
+  
+  
+}
+
+th{
+  padding: 0.6rem;
+  
+  
+}
+
+
+.modal-content{
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.103);
+  
+}
+
+.modal-header{
+  border: 1px solid rgba(255, 255, 255, 0.103);
+}
+
+.btn-close {
+  color: #fff;
+}
+
+.modal-form-input{
+  width: 400px;
+}
+
+.modal-form-input input {
+  padding: 1rem;
+}
+
+.modal-form-input select{
+  width: 300px;
+}
+
+
+
+.table-container{
+  width: 100%;
+  margin: auto;
+}
+
+.icons-btn{
+  background-color: #11111100;
+  border: none;
+  color: rgb(82, 82, 82);
+  text-align: center;
+  width: 2.3rem;
+}
+
+.deletebtn {
+  width: 3.3rem;
+}
+
+.verbtn{
+  width: 1.5rem;
+}
+
+.icons-btn:hover{
+  transition: 0.8s;
+  color: #a8a8a8;
+}
