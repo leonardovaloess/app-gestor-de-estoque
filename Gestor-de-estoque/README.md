@@ -1,3 +1,6 @@
+Projeto desenvolvido com Axios, React, e json-server
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
