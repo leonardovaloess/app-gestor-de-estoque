@@ -7,7 +7,7 @@ export default function Table() {
   const { products } = useContext(ProductContext);
 
   return (
-    <table >
+    <table>
       <thead>
         <tr>
           <th scope="col">Nome</th>
@@ -35,12 +35,14 @@ export default function Table() {
                 className="icons-btn"
                 data-bs-target={`#edit-modal-${product.id}`}
               >
-                <i class="bi bi-pencil-square"></i>
+                <i className="bi bi-pencil-square"></i>
               </button>
               <Modal product={product} />
             </td>
             <td>
-              <button className="icons-btn verbt"><i class="bi bi-eye-fill"></i></button>
+              <button className="icons-btn verbt">
+                <i className="bi bi-eye-fill"></i>
+              </button>
             </td>
           </tr>
         ))}

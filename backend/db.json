@@ -1,18 +1,32 @@
 {
   "products": [
     {
-      "nome": "teste",
-      "preco": "1",
-      "estoque": "2",
-      "tipo": "hardware",
+      "nome": "Mouse Logitech",
+      "preco": "400",
+      "estoque": "15",
+      "tipo": "periférico",
       "id": 1
     },
     {
-      "nome": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "preco": "2",
-      "estoque": "2",
+      "nome": "Processador AMD",
+      "preco": "2000",
+      "estoque": "3",
+      "tipo": "hardware",
+      "id": 3
+    },
+    {
+      "nome": "Mouse bungee",
+      "preco": "150",
+      "estoque": "4",
       "tipo": "acessorios",
-      "id": 2
+      "id": 4
+    },
+    {
+      "nome": "teste",
+      "preco": "1",
+      "estoque": "1",
+      "tipo": "acessorios",
+      "id": 5
     }
   ]
 }

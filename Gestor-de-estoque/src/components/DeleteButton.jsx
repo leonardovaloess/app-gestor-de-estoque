@@ -19,7 +19,7 @@ export default function DeleteButton({ id_to_delete }) {
     }
   };
 
-  return <button className="icons-btn deletebtn" onClick={() => deleteProduct(id_to_delete)}><i class="bi bi-trash3-fill"></i></button>
+  return <button className="icons-btn deletebtn" onClick={() => deleteProduct(id_to_delete)}><i className="bi bi-trash3-fill"></i></button>
     
   
 }
