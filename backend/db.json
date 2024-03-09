@@ -20,13 +20,6 @@
       "estoque": "4",
       "tipo": "acessorios",
       "id": 4
-    },
-    {
-      "nome": "teste",
-      "preco": "1",
-      "estoque": "1",
-      "tipo": "acessorios",
-      "id": 5
     }
   ]
 }

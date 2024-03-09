@@ -1,8 +1,10 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import DashboardContext from "../../contexts/DashboardContext";
 import InStock from "../components - dashboard/InStock";
 import { useEffect } from "react";
 import axios from "axios";
+
+
 
 export default function Dashboard() {
   const [products, setProducts] = useState([]);
@@ -23,9 +25,10 @@ export default function Dashboard() {
   // console.log(products);
   return (
     <div className="dashboard-container">
-      <h1>DashBoard</h1>
+      
       <DashboardContext.Provider value={{products, fetchProducts}}>
         <InStock />
+        
       </DashboardContext.Provider>
     </div>
   );

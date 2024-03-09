@@ -2,6 +2,7 @@ import { useContext } from "react";
 import ProductContext from "../../contexts/ProductContext";
 import DeleteButton from "./DeleteButton";
 import Modal from "./Modal";
+import { Link } from "react-router-dom";
 
 export default function Table() {
   const { products } = useContext(ProductContext);
@@ -16,7 +17,6 @@ export default function Table() {
           <th scope="col">tipo</th>
           <th scope="col">Deletar</th>
           <th scope="col">Editar</th>
-          <th scope="col">Ver</th>
         </tr>
       </thead>
       <tbody>
@@ -38,11 +38,6 @@ export default function Table() {
                 <i className="bi bi-pencil-square"></i>
               </button>
               <Modal product={product} />
-            </td>
-            <td>
-              <button className="icons-btn verbt">
-                <i className="bi bi-eye-fill"></i>
-              </button>
             </td>
           </tr>
         ))}

@@ -31,7 +31,7 @@ body {
   color: #f4f4f4;
 }
 
-.links p:hover{
+.links p:hover {
   color: #a8a8a8;
   transition: 0.4s;
 }
@@ -50,6 +50,7 @@ body {
   gap: 2rem;
   margin-bottom: 5rem;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 input {
@@ -88,37 +89,31 @@ select {
   width: 100%;
 }
 
-table{
+table {
   width: 100%;
 }
 
-tr{
+tr {
   border: 1px solid rgba(255, 255, 255, 0.103);
   padding: 1rem;
   background-color: #111111;
-  
 }
 
-td{
+td {
   padding: 0.6rem;
-  
-  
 }
 
-th{
+th {
   padding: 0.6rem;
-  
-  
 }
 
-
-.modal-content{
+.modal-content {
   background-color: #111111;
   border: 1px solid rgba(255, 255, 255, 0.103);
-  
 }
 
-.modal-header{
+.modal-footer,
+.modal-header {
   border: 1px solid rgba(255, 255, 255, 0.103);
 }
 
@@ -126,26 +121,25 @@ th{
   color: #fff;
 }
 
-.modal-form-input{
+.modal-form-input {
   width: 400px;
 }
 
 .modal-form-input input {
   padding: 1rem;
+  border-radius: 7px;
 }
 
-.modal-form-input select{
+.modal-form-input select {
   width: 300px;
 }
 
-
-
-.table-container{
+.table-container {
   width: 100%;
   margin: auto;
 }
 
-.icons-btn{
+.icons-btn {
   background-color: #11111100;
   border: none;
   color: rgb(82, 82, 82);
@@ -157,11 +151,50 @@ th{
   width: 3.3rem;
 }
 
-.verbtn{
+.verbtn {
   width: 1.5rem;
 }
 
-.icons-btn:hover{
+.icons-btn:hover {
   transition: 0.8s;
   color: #a8a8a8;
+}
+
+.instock-container {
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.instock-container div {
+  background-color: #0c0c0c;
+  padding: 1rem;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: 0.2px solid rgba(255, 255, 255, 0.103);
+  box-shadow: 0px 5px 10px rgba(10, 10, 10, 0.699);
+  cursor: pointer;
+}
+
+.instock-container div:hover {
+  background-color: #1a1a1a;
+  transition: 0.3s;
+}
+
+.number-detail {
+  font-size: 4rem;
+}
+
+.details-container {
+  width: 80%;
+  margin-top: 6rem;
 }

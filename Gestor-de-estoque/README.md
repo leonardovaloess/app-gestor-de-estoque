@@ -1,5 +1,7 @@
 Projeto desenvolvido com Axios, React, e json-server
 
+PARA RODAR O PROJETO VC DEVE PRIMEIRO ACESSAR A PASTA BACK END E RODAR O COMANDO "npm run build" no terminal para abrir o json-server
+APÓS ISSO, ACESSE A PASTA GESTOR DE ESTOQUE PARA RODAR O COMANDO "npm run dev" e acessar a aplicação
 
 # React + Vite
 
