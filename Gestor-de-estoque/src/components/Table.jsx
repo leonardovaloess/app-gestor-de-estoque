@@ -14,26 +14,26 @@ export default function Table() {
           <th scope="col">Nome</th>
           <th scope="col">Preco</th>
           <th scope="col">Estoque</th>
-          <th scope="col">tipo</th>
+
           <th scope="col">Deletar</th>
           <th scope="col">Editar</th>
         </tr>
       </thead>
       <tbody>
         {products.map((product) => (
-          <tr key={product.id}>
-            <td>{product.nome}</td>
-            <td>R$ {product.preco}</td>
-            <td>{product.estoque}</td>
-            <td>{product.tipo}</td>
+          <tr key={product._id}>
+            <td>{product.name}</td>
+            <td>R$ {product.price}</td>
+            <td>{product.inStock}</td>
+
             <td>
-              <DeleteButton id_to_delete={product.id} />
+              <DeleteButton id_to_delete={product._id} />
             </td>
             <td>
               <button
                 data-bs-toggle="modal"
                 className="icons-btn"
-                data-bs-target={`#edit-modal-${product.id}`}
+                data-bs-target={`#edit-modal-${product._id}`}
               >
                 <i className="bi bi-pencil-square"></i>
               </button>

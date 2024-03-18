@@ -6,12 +6,12 @@ export default function Form() {
   const { fetchProducts } = useContext(ProductContext);
 
   const [product, setProduct] = useState({
-    nome: "",
-    preco: "",
-    estoque: "",
-    tipo: "",
+    name: "",
+    description: "",
+    price: "",
+    imageUrl: "",
+    inStock: "",
   });
-  // Criando produto
 
   const updateFormField = (field, value) => {
     setProduct((currentProduct) => ({
@@ -21,26 +21,32 @@ export default function Form() {
   };
 
   const createProduct = async () => {
-    // OBJETO DO PRODUTO
+    console.log("Produto a ser criado:", product); // Imprime o estado do produto
+    
     if (
-      product.nome === "" ||
-      product.tipo === "" ||
-      product.preco === "" ||
-      product.estoque === ""
+      product.name === "" ||
+      product.imageUrl === "" ||
+      product.price === "" ||
+      product.inStock === ""
     ) {
       alert("Preencha todos os campos");
-    } else if (isNaN(product.preco) || isNaN(product.estoque)) {
+    } else if (isNaN(product.price) || isNaN(product.inStock)) {
       alert("Preço ou estoque devem ser números");
     } else {
       try {
         await axios.post("http://localhost:3000/products", product);
         fetchProducts();
-        setProduct({ nome: "", preco: "", estoque: "", tipo: "" });
+        setProduct({
+          name: "",
+          price: "",
+          inStock: "",
+          imageUrl: "",
+          description: "",
+        });
       } catch (error) {
         console.log("erro ao criar produto: ", error);
       }
     }
-    console.log(product);
   };
 
   const handleSubmit = (ev) => {
@@ -54,41 +60,46 @@ export default function Form() {
         <label>Nome do produto:</label>
         <input
           type="text"
-          value={product.nome}
-          onChange={(ev) => updateFormField("nome", ev.target.value)}
+          value={product.name}
+          onChange={(ev) => updateFormField("name", ev.target.value)}
         />
       </div>
       <div className="input-container">
         <label>Preço:</label>
         <input
           type="text"
-          value={product.preco}
-          onChange={(ev) => updateFormField("preco", ev.target.value)}
+          value={product.price}
+          onChange={(ev) => updateFormField("price", ev.target.value)}
         />
       </div>
       <div className="input-container">
         <label>Estoque:</label>
         <input
           type="text"
-          value={product.estoque}
-          onChange={(ev) => updateFormField("estoque", ev.target.value)}
+          value={product.inStock}
+          onChange={(ev) => updateFormField("inStock", ev.target.value)}
         />
       </div>
       <div className="input-container">
-        <label>Tipo:</label>
-        <select
-          name="categoria"
-          value={product.tipo}
-          onChange={(ev) => updateFormField("tipo", ev.target.value)}
-        >
-          <option value="">Selecione...</option>
-          <option value="periférico">periférico</option>
-          <option value="acessorios">acessorios</option>
-          <option value="hardware">hardware</option>
-        </select>
+        <label>Url da imagem:</label>
+        <input
+          type="text"
+          value={product.imageUrl}
+          onChange={(ev) => updateFormField("imageUrl", ev.target.value)}
+        />
+      </div>
+      <div className="input-container">
+        <label>Descrição:</label>
+        <textarea
+          name="description"
+          value={product.description}
+          onChange={(ev) => updateFormField("description", ev.target.value)}
+          rows={4}
+          cols={40}
+        />
       </div>
 
-      <button>Enviar</button>
+      <button type="submit">Enviar</button>
     </form>
   );
 }

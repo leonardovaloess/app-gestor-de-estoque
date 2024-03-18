@@ -53,6 +53,7 @@ body {
   flex-wrap: wrap;
 }
 
+textarea,
 input {
   padding: 0.4rem;
   background-color: #111111;
