@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import DashboardContext from "../../contexts/DashboardContext";
 import DashboardTable from "./DashboardTable";
-import { array } from "prop-types";
 
 export default function InStock() {
   const { products } = useContext(DashboardContext);
@@ -16,17 +15,22 @@ export default function InStock() {
     }
   };
 
-  const hardwareProducts = products.filter(
-    (product) => product.tipo === "hardware"
+  const iphones = products.filter((product) =>
+    product.name.toLowerCase().includes("iphone")
   );
-  const perifericoProducts = products.filter(
-    (product) => product.tipo === "periférico"
+  const macs = products.filter((product) =>
+    product.name.toLowerCase().includes("mac")
   );
-  const acessoriosProducts = products.filter(
-    (product) => product.tipo === "acessorios"
+  const watches = products.filter((product) =>
+    product.name.toLowerCase().includes("watch")
   );
-  const esgotandoProducts = products.filter((product) => product.estoque < 10);
-  const muitosProducts = products.filter((product) => product.estoque > 10);
+
+  const ipads = products.filter((product) => 
+    product.name.toLowerCase().includes("ipad")
+  )
+
+  const esgotandoProducts = products.filter((product) => product.inStock < 10);
+  const muitosProducts = products.filter((product) => product.inStock > 10);
 
   return (
     <div>
@@ -35,20 +39,24 @@ export default function InStock() {
           <p>Total em Estoque:</p>
           <p className="number-detail">{products.length}</p>
         </div>
-        <div onClick={() => toggleTable("hardware")}>
-          <p>Hardwares em Estoque:</p>
-          <p className="number-detail">{hardwareProducts.length}</p>
+        <div onClick={() => toggleTable("iphones")}>
+          <p>Iphones em Estoque:</p>
+          <p className="number-detail">{iphones.length}</p>
         </div>
-        <div onClick={() => toggleTable("acessorios")}>
-          <p>Acessorios em Estoque:</p>
-          <p className="number-detail">{acessoriosProducts.length}</p>
+        <div onClick={() => toggleTable("macs")}>
+          <p>Mac/macbooks em Estoque:</p>
+          <p className="number-detail">{macs.length}</p>
         </div>
-        <div onClick={() => toggleTable("perifericos")}>
-          <p>Periféricos em Estoque:</p>
-          <p className="number-detail">{perifericoProducts.length}</p>
+        <div onClick={() => toggleTable("watches")}>
+          <p>Watches em Estoque:</p>
+          <p className="number-detail">{watches.length}</p>
+        </div>
+        <div onClick={() => toggleTable("ipads")}>
+          <p>Ipads em Estoque:</p>
+          <p className="number-detail">{ipads.length}</p>
         </div>
         <div onClick={() => toggleTable("esgotando")}>
-          <p>Produtos esgotando:</p>
+          <p> esgotando:</p>
           <p className="number-detail">{esgotandoProducts.length}</p>
         </div>
         <div onClick={() => toggleTable("muitos")}>
@@ -60,16 +68,18 @@ export default function InStock() {
       <div className="table-container details-container">
         {activeTable === "total" ? (
           <DashboardTable array={products} />
-        ) : activeTable === "hardware" ? (
-          <DashboardTable array={hardwareProducts} />
-        ) : activeTable === "acessorios" ? (
-          <DashboardTable array={acessoriosProducts} />
-        ) : activeTable === "perifericos" ? (
-          <DashboardTable array={perifericoProducts} />
+        ) : activeTable === "iphones" ? (
+          <DashboardTable array={iphones} />
+        ) : activeTable === "macs" ? (
+          <DashboardTable array={macs} />
         ) : activeTable === "esgotando" ? (
           <DashboardTable array={esgotandoProducts} />
         ) : activeTable === "muitos" ? (
           <DashboardTable array={muitosProducts} />
+        ) : activeTable === "watches" ? (
+          <DashboardTable array={watches} />
+        ) : activeTable === "ipads" ? (
+          <DashboardTable array={ipads}/>
         ) : null}
       </div>
     </div>

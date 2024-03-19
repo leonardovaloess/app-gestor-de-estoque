@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ProductContext from "../../contexts/ProductContext";
 import DeleteButton from "./DeleteButton";
 import Modal from "./Modal";
-import { Link } from "react-router-dom";
+
 
 export default function Table() {
   const { products } = useContext(ProductContext);

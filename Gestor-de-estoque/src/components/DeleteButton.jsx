@@ -12,7 +12,7 @@ export default function DeleteButton({ id_to_delete }) {
   
   const deleteProduct = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/products/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/${id}`);
       fetchProducts();
     } catch (error) {
       console.log(error);

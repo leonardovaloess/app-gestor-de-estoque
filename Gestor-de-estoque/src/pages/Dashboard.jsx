@@ -4,14 +4,12 @@ import InStock from "../components - dashboard/InStock";
 import { useEffect } from "react";
 import axios from "axios";
 
-
-
 export default function Dashboard() {
   const [products, setProducts] = useState([]);
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/products");
+      const response = await axios.get(import.meta.env.VITE_API_BASE_URL);
       setProducts(response.data);
     } catch (error) {
       console.log("erro ao fazer a req GET: ", error);
@@ -25,10 +23,8 @@ export default function Dashboard() {
   // console.log(products);
   return (
     <div className="dashboard-container">
-      
-      <DashboardContext.Provider value={{products, fetchProducts}}>
+      <DashboardContext.Provider value={{ products, fetchProducts }}>
         <InStock />
-        
       </DashboardContext.Provider>
     </div>
   );

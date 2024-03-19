@@ -7,11 +7,11 @@ import Table from "../components/Table";
 export default function Products() {
   // STATES
   const [products, setProducts] = useState([]);
-  
 
+  
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/products");
+      const response = await axios.get(import.meta.env.VITE_API_BASE_URL);
       setProducts(response.data);
     } catch (error) {
       console.log("erro ao fazer a req GET: ", error);

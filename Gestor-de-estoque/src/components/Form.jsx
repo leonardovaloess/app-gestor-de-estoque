@@ -8,9 +8,9 @@ export default function Form() {
   const [product, setProduct] = useState({
     name: "",
     description: "",
-    price: "",
+    price: 0,
     imageUrl: "",
-    inStock: "",
+    inStock: 0,
   });
 
   const updateFormField = (field, value) => {
@@ -22,7 +22,7 @@ export default function Form() {
 
   const createProduct = async () => {
     console.log("Produto a ser criado:", product); // Imprime o estado do produto
-    
+
     if (
       product.name === "" ||
       product.imageUrl === "" ||
@@ -34,12 +34,12 @@ export default function Form() {
       alert("Preço ou estoque devem ser números");
     } else {
       try {
-        await axios.post("http://localhost:3000/products", product);
+        await axios.post(import.meta.env.VITE_API_BASE_URL, product);
         fetchProducts();
         setProduct({
           name: "",
-          price: "",
-          inStock: "",
+          price: 0,
+          inStock: 0,
           imageUrl: "",
           description: "",
         });
@@ -69,7 +69,9 @@ export default function Form() {
         <input
           type="text"
           value={product.price}
-          onChange={(ev) => updateFormField("price", ev.target.value)}
+          onChange={(ev) =>
+            updateFormField("price", parseFloat(ev.target.value))
+          }
         />
       </div>
       <div className="input-container">
@@ -77,7 +79,9 @@ export default function Form() {
         <input
           type="text"
           value={product.inStock}
-          onChange={(ev) => updateFormField("inStock", ev.target.value)}
+          onChange={(ev) =>
+            updateFormField("inStock", parseFloat(ev.target.value))
+          }
         />
       </div>
       <div className="input-container">
