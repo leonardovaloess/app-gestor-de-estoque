@@ -12,8 +12,8 @@ export default function Modal({ product }) {
     if (
       updateProduct.name === "" ||
       updateProduct.description === "" ||
-      updateProduct.price === 0 ||
-      updateProduct.inStock === 0 ||
+      updateProduct.price === "" ||
+      updateProduct.inStock === "" ||
       updateProduct.imageUrl === ""
     ) {
       alert("Preencha todos os campos");
@@ -68,7 +68,9 @@ export default function Modal({ product }) {
               <input
                 type="text"
                 value={updateProduct.price}
-                onChange={(ev) => updateFormField("price", parseFloat(ev.target.value))}
+                onChange={(ev) =>
+                  updateFormField("price", parseFloat(ev.target.value))
+                }
               />
             </div>
             <div className="input-container modal-form-input">
@@ -76,7 +78,9 @@ export default function Modal({ product }) {
               <input
                 type="text"
                 value={updateProduct.inStock}
-                onChange={(ev) => updateFormField("inStock", parseFloat(ev.target.value))}
+                onChange={(ev) =>
+                  updateFormField("inStock", parseFloat(ev.target.value))
+                }
               />
             </div>
             <div className="input-container modal-form-input">

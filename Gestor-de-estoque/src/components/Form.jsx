@@ -8,9 +8,9 @@ export default function Form() {
   const [product, setProduct] = useState({
     name: "",
     description: "",
-    price: 0,
+    price: "",
     imageUrl: "",
-    inStock: 0,
+    inStock: "",
   });
 
   const updateFormField = (field, value) => {
@@ -38,8 +38,8 @@ export default function Form() {
         fetchProducts();
         setProduct({
           name: "",
-          price: 0,
-          inStock: 0,
+          price: "",
+          inStock: "",
           imageUrl: "",
           description: "",
         });

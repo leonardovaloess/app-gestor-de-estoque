@@ -8,26 +8,21 @@ export default function InStock() {
 
   const toggleTable = (tableName) => {
     // Se a tabela atual for clicada novamente, fecha-a
-    if (activeTable === tableName) {
-      setActiveTable(null);
-    } else {
-      setActiveTable(tableName);
-    }
+    setActiveTable(activeTable === tableName ? null : tableName);
   };
 
   const iphones = products.filter((product) =>
-    product.name.toLowerCase().includes("iphone")
+    product.name && product.name.toLowerCase().includes("iphone")
   );
   const macs = products.filter((product) =>
-    product.name.toLowerCase().includes("mac")
+    product.name && product.name.toLowerCase().includes("mac")
   );
   const watches = products.filter((product) =>
-    product.name.toLowerCase().includes("watch")
+    product.name && product.name.toLowerCase().includes("watch")
   );
-
-  const ipads = products.filter((product) => 
-    product.name.toLowerCase().includes("ipad")
-  )
+  const ipads = products.filter((product) =>
+    product.name && product.name.toLowerCase().includes("ipad")
+  );
 
   const esgotandoProducts = products.filter((product) => product.inStock < 10);
   const muitosProducts = products.filter((product) => product.inStock > 10);
@@ -56,7 +51,7 @@ export default function InStock() {
           <p className="number-detail">{ipads.length}</p>
         </div>
         <div onClick={() => toggleTable("esgotando")}>
-          <p> esgotando:</p>
+          <p>Produtos esgotando:</p>
           <p className="number-detail">{esgotandoProducts.length}</p>
         </div>
         <div onClick={() => toggleTable("muitos")}>
@@ -66,21 +61,13 @@ export default function InStock() {
       </div>
 
       <div className="table-container details-container">
-        {activeTable === "total" ? (
-          <DashboardTable array={products} />
-        ) : activeTable === "iphones" ? (
-          <DashboardTable array={iphones} />
-        ) : activeTable === "macs" ? (
-          <DashboardTable array={macs} />
-        ) : activeTable === "esgotando" ? (
-          <DashboardTable array={esgotandoProducts} />
-        ) : activeTable === "muitos" ? (
-          <DashboardTable array={muitosProducts} />
-        ) : activeTable === "watches" ? (
-          <DashboardTable array={watches} />
-        ) : activeTable === "ipads" ? (
-          <DashboardTable array={ipads}/>
-        ) : null}
+        {activeTable === "total" && <DashboardTable array={products} />}
+        {activeTable === "iphones" && <DashboardTable array={iphones} />}
+        {activeTable === "macs" && <DashboardTable array={macs} />}
+        {activeTable === "esgotando" && <DashboardTable array={esgotandoProducts} />}
+        {activeTable === "muitos" && <DashboardTable array={muitosProducts} />}
+        {activeTable === "watches" && <DashboardTable array={watches} />}
+        {activeTable === "ipads" && <DashboardTable array={ipads} />}
       </div>
     </div>
   );
